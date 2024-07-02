@@ -248,7 +248,7 @@ DOCUMENTATION = """
         oob_ip_as_primary_ip:
             description: Use out of band IP as `ansible host`
             type: boolean
-            default: False
+            default: false
         rename_variables:
             description:
                 - Rename variables evaluated by nb_inventory, before writing them.
