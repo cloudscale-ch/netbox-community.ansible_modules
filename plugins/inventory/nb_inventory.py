@@ -1521,9 +1521,6 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
         if self.interfaces:
             lookups.append(self.refresh_interfaces)
 
-        if self.prefixes:
-            lookups.append(self.refresh_prefixes)
-
         if self.services:
             lookups.append(self.refresh_services)
 
@@ -1544,6 +1541,9 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
         # IP addresses are needed for either interfaces or dns_name options
         if self.interfaces or self.dns_name or self.ansible_host_dns_name:
             lookups.append(self.refresh_ipaddresses)
+
+        if self.prefixes:
+            lookups.append(self.refresh_prefixes)
 
         return lookups
 
